@@ -77,10 +77,10 @@ public void testcase02() throws InterruptedException{
 Actions ad = new Actions (driver);
 WebElement serchbox = driver.findElement(By.xpath("//textarea[@name='q']"));
 ad.moveToElement(serchbox).click();
-// serchbox.sendKeys("Capgemini");
-ad.sendKeys(serchbox,"Capgemini").build().perform();
+
+ad.sendKeys(serchbox,"Industry").build().perform();
 WebDriverWait wait = new WebDriverWait(driver, java.time.Duration.ofSeconds(6));
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Alh6id")));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".OBMEnb>ul>li")));
 serchbox.sendKeys(Keys.ENTER);
 driver.switchTo().newWindow(WindowType.TAB);
 driver.navigate().to("https://www.apsrtconline.in/oprs-web/guest/home.do?h=1");
